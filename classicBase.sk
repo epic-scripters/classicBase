@@ -1,0 +1,25 @@
+#WORK IN PROGRESS!#
+on script load:
+  loadingFiles()
+  
+on skript load:
+  loadingFiles()
+  
+on first script load:
+  set yaml value "do-config" to "yes" from file "plugins/classicBase/config.yml"
+  configDo(settingfiles)
+  
+function loadingFiles():
+  if file "plugins/classicBase" doesn't exist:
+    create file "plugins/classicBase"
+  if file "plugins/classicBase/config.yml" doesn't exist:
+    create file "plugins/classicBase/config.yml"
+  if file "plugins/classicBase/motd.yml" doesn't exist:
+    create file "plugins/classicBase/motd.yml"
+  configDo(settingvars)
+  
+function configDo(t: text):
+  if {_t} is "settingfiles":
+    set {_do-config} to yaml value "do-config" from file "plugins/classicBase/config.yml"
+    if {_do-config} is "yes":
+      set yaml value "MoneyMax" to "1000000" from file "plugins/classicBase/config.yml"
