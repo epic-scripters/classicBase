@@ -23,3 +23,5 @@ function configDo(t: text):
     set {_do-config} to yaml value "do-config" from file "plugins/classicBase/config.yml"
     if {_do-config} is "yes":
       set yaml value "MoneyMax" to "1000000" from file "plugins/classicBase/config.yml"
+      set yaml value "Nickname" to "~" from file "plugins/classicBase/config.yml"
+      set yaml value 
